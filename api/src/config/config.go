@@ -13,7 +13,8 @@ var (
 	//String conexão com o banco de dados
 	StringConexaoBanco = ""
 	// porta padrão da API
-	Porta = 0
+	Porta     = 0
+	SecretKey []byte
 )
 
 // Inicializar as variaveis de ambiente
@@ -33,5 +34,7 @@ func Carregar() {
 		os.Getenv("DB_SENHA"),
 		os.Getenv("DB_NOME"),
 	)
+
+	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 
 }
